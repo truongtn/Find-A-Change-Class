@@ -62,9 +62,3 @@ class Findachange:
 				self.addedfile.append(filename)
 	def findachange(self):
 		self._checkexits(self.base_path,self.target_path)
-
-a = Findachange("wordpress","wordpress2")
-a.findachange()
-print a.missingfile
-print a.addedfile
-print a.changedfile
