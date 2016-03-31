@@ -5,8 +5,6 @@ Example:
 
 a = Findachange("wordpress","wordpress2")
 
-a.findachange()
-
 print a.missingfile
 
 print a.addedfile
