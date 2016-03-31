@@ -18,6 +18,7 @@ class Findachange:
 		self.target_path = os.path.realpath(target_path)
 		self.base_list = self._listfile(self.base_path)
 		self.target_list = self._listfile(self.target_path)
+		self.findachange()
 	#Convert path list to file name list
 	def _getlistfilename(self,_list):
 		newlist = []
