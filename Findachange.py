@@ -30,11 +30,15 @@ class Findachange:
 		filelist = glob(join(getcwd(), path, '*'))
 		return filelist
 	#Make MD5 
-	def _filemd5(self,path):
-		with open(path) as file_to_check:
-			data = file_to_check.read()
-			md5_returned = hashlib.md5(data).hexdigest()
-		return md5_returned
+	def _filemd5(self,filepath, blocksize=2**20):
+	    m = hashlib.md5()
+	    with open( filepath , "rb" ) as f:
+	        while True:
+	            buf = f.read(blocksize)
+	            if not buf:
+	                break
+	            m.update( buf )
+	    return m.hexdigest()
 	def _makelinkdict(self,_list):
 		newdict = {}
 		for item in _list:
